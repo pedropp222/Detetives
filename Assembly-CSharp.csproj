@@ -56,7 +56,34 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Assets Unity\Utility\DynamicShadowSettings.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\LerpControlledBob.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\HandHeldCam.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\FreeLookCam.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\CameraRefocus.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\AutoCam.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\CurveControlledBob.cs" />
+    <Compile Include="Assets\Assets Unity\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Assets Unity\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\PivotBasedCameraRig.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\AutoMoveAndRotate.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\Assets Unity\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\TargetFieldOfView.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\SimpleMouseRotator.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\AbstractTargetFollower.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\SmoothFollow.cs" />
     <Compile Include="Assets\Scripts\Rodar.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\DragRigidbody.cs" />
+    <Compile Include="Assets\Assets Unity\Utility\FOVKick.cs" />
+    <Compile Include="Assets\Assets Unity\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
+    <Compile Include="Assets\Assets Unity\Cameras\Scripts\LookatTarget.cs" />
+    <Compile Include="Assets\Scripts\SonsPassosControlador.cs" />
+    <Compile Include="Assets\Scripts\SonsPassosDados.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Assets Unity\Cameras\CameraGuidelines.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -751,10 +778,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{2943120C-03EE-3A7D-726A-96CABDD6CBC0}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

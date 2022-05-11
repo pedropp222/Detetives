@@ -2,11 +2,13 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using Controladores;
 
 #pragma warning disable 618, 649
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
+    [RequireComponent(typeof (SonsPassosControlador))]
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
@@ -37,6 +39,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
 
+        private SonsPassosControlador passosControlador;
+
         // Use this for initialization
         private void Start()
         {
@@ -49,6 +53,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
 			m_MouseLook.Init(transform , m_Camera.transform);
+            passosControlador = GetComponent<SonsPassosControlador>();
         }
 
         
@@ -102,6 +107,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_Jump = false;
                     m_Jumping = true;
                 }
+                ProgressStepCycle(speed);
             }
             else
             {
@@ -109,7 +115,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir * Time.deltaTime);
 
-            ProgressStepCycle(speed);
+            
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
@@ -118,7 +124,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void ProgressStepCycle(float speed)
         {
-            if (m_CharacterController.velocity.sqrMagnitude > 0 && (m_Input.x != 0 || m_Input.y != 0))
+            if (m_CharacterController.velocity.sqrMagnitude > 0.1f && (m_Input.x != 0 || m_Input.y != 0))
             {
                 m_StepCycle += (m_CharacterController.velocity.magnitude + (speed*(m_IsWalking ? 1f : m_RunstepLenghten)))*
                              Time.fixedDeltaTime;
@@ -131,8 +137,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_NextStep = m_StepCycle + m_StepInterval;
 
-            // aplicar logica futura para footsteps
-            //PlayFootStepAudio();
+            //dizer ao controlador dos passos para processar um novo som
+            passosControlador.ReceberPasso();
         }
 
 
