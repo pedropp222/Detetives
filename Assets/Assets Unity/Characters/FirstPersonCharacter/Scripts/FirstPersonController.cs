@@ -12,13 +12,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
+
+       
+
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
         [SerializeField] private float m_GravityMultiplier;
-        [SerializeField] private MouseLook m_MouseLook;
+        [SerializeField] public MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
         [SerializeField] private bool m_UseHeadBob;
@@ -40,6 +43,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
 
         private SonsPassosControlador passosControlador;
+        private bool canMove = true;
+        private bool canRotate = true;
+
 
         // Use this for initialization
         private void Start()
@@ -56,7 +62,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             passosControlador = GetComponent<SonsPassosControlador>();
         }
 
-        
+        public void SetMoving(bool estado)
+        {
+            canMove = estado;
+        }
+
+        public void SetRotate(bool estado)
+        {
+            canRotate = estado;
+        }
+
         // Update is called once per frame
         private void Update()
         {
@@ -82,8 +97,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
 
-            float speed;
-            GetInput(out speed);
+            float speed = 0f;
+            
+            if (canMove) GetInput(out speed);
+
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
 
@@ -117,11 +134,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             
             UpdateCameraPosition(speed);
-
-            m_MouseLook.UpdateCursorLock();
         }
 
-
+       
         private void ProgressStepCycle(float speed)
         {
             if (m_CharacterController.velocity.sqrMagnitude > 0.1f && (m_Input.x != 0 || m_Input.y != 0))
@@ -201,6 +216,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+            if (canRotate)
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
