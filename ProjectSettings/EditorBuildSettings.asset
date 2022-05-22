@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/CoisasConstrucao/cenarioTesteCharacter.unity
+    guid: fe86c732668c3bc42bcd5e3629a29570
   m_configObjects: {}

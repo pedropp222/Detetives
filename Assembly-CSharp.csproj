@@ -57,18 +57,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Assets Unity\Utility\DynamicShadowSettings.cs" />
+    <Compile Include="Assets\Scripts\Controladores\PausaControlador.cs" />
     <Compile Include="Assets\Assets Unity\Utility\LerpControlledBob.cs" />
     <Compile Include="Assets\Assets Unity\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IHoverable.cs" />
     <Compile Include="Assets\Assets Unity\Cameras\Scripts\HandHeldCam.cs" />
     <Compile Include="Assets\Assets Unity\Cameras\Scripts\FreeLookCam.cs" />
     <Compile Include="Assets\Assets Unity\Utility\CameraRefocus.cs" />
+    <Compile Include="Assets\Scripts\Controladores\ComponentFinder.cs" />
     <Compile Include="Assets\Assets Unity\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\Assets Unity\Utility\CurveControlledBob.cs" />
     <Compile Include="Assets\Assets Unity\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Assets Unity\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
     <Compile Include="Assets\Assets Unity\Cameras\Scripts\PivotBasedCameraRig.cs" />
     <Compile Include="Assets\Assets Unity\Utility\AutoMoveAndRotate.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IPausable.cs" />
     <Compile Include="Assets\Scripts\Debug\RaycastDebug.cs" />
     <Compile Include="Assets\Scripts\Controladores\RaycastControlador.cs" />
     <Compile Include="Assets\Assets Unity\Utility\FPSCounter.cs" />
@@ -79,19 +82,20 @@
     <Compile Include="Assets\Assets Unity\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Assets Unity\Utility\SmoothFollow.cs" />
     <Compile Include="Assets\Scripts\Controladores\SonsPassosControlador.cs" />
+    <Compile Include="Assets\Scripts\Jogador.cs" />
     <Compile Include="Assets\Scripts\Rodar.cs" />
     <Compile Include="Assets\Assets Unity\Utility\DragRigidbody.cs" />
     <Compile Include="Assets\Assets Unity\Utility\FOVKick.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IInteragivel.cs" />
     <Compile Include="Assets\Assets Unity\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Assets Unity\Cameras\Scripts\LookatTarget.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IPausable.cs" />
-    <Compile Include="Assets\Scripts\Jogador.cs" />
-    <Compile Include="Assets\Scripts\Controladores\PausaControlador.cs" />
-    <Compile Include="Assets\Scripts\Controladores\ComponentFinder.cs" />
+    <Compile Include="Assets\Scripts\Eventos\Pausa\OnPause_ToggleComponent.cs" />
+    <Compile Include="Assets\Scripts\Eventos\Pausa\OnClick_TriggerPause.cs" />
+    <Compile Include="Assets\Scripts\Eventos\Pausa\OnPause_ToggleObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets Unity\Cameras\CameraGuidelines.txt" />
+    <None Include="Assets\Shaders\WaterLQ.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

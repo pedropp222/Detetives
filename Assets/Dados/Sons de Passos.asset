@@ -13,13 +13,18 @@ MonoBehaviour:
   m_Name: Sons de Passos
   m_EditorClassIdentifier: 
   listaDeSons:
-  - tagNome: Step
+  - materialChao: {fileID: 2100000, guid: 8d3b09ebf1b29dc40b42e51273a0f1dd, type: 2}
     sons:
     - {fileID: 8300000, guid: 2ef32f99e754e3245a156ed2886d1ef7, type: 3}
     - {fileID: 8300000, guid: 8bd563e1564f1864d8c1a3b8d641453f, type: 3}
     - {fileID: 8300000, guid: 44ec60612f69e0b409e411e591b0cae5, type: 3}
-  - tagNome: StepMadeira
+  - materialChao: {fileID: 2100000, guid: f64de5e7ced167e4d851c675c5c1632e, type: 2}
     sons:
     - {fileID: 8300000, guid: a454d6dcc980b62498997e17047119bc, type: 3}
     - {fileID: 8300000, guid: 69a44ce1dd7160943976ad1107faf858, type: 3}
     - {fileID: 8300000, guid: 958ea83490fcb344c96e59f197a138f9, type: 3}
+  - materialChao: {fileID: 2100000, guid: 13702a09a99ef86498e870148bd7af95, type: 2}
+    sons:
+    - {fileID: 8300000, guid: b7f78e88a63b27347a41075d3dbfed29, type: 3}
+    - {fileID: 8300000, guid: 794c042b3862028428718fda5c1272dd, type: 3}
+    - {fileID: 8300000, guid: 39788378a9014104483d34aec21f364a, type: 3}
